@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.0.0//EN" "http://www.liferay.com/dtd/liferay-display_6_0_0.dtd">
+ <display>
+ 	<category name="category.chapter07.hello">
+ 		<portlet id="helloWorld" />
+ 	</category>
+ 	<category name="com.library.store.lover">
+ 		<portlet id="libraryLover" />
+ 	</category>
+ 	<category name="com.baj.Library">
+ 		<portlet id="library" />
+ 	</category>
+ 	 	<!-- <category name="com.baj.Library.add">
+ 		<portlet id="libraryAdd" />
+ 	</category> -->
+ </display>
