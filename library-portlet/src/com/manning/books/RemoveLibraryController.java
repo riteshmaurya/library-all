@@ -5,11 +5,13 @@ import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.portlet.ModelAndView;
 import org.springframework.web.portlet.mvc.AbstractController;
 
 public class RemoveLibraryController extends AbstractController{
 
+	@Autowired
 	private LibraryService libraryService;
 	private Library libraryToRemove;
 

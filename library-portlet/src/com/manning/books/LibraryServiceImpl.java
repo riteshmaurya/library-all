@@ -7,14 +7,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-
+@Component
 public class LibraryServiceImpl implements LibraryService {
+	
 	
 	private List<Library> library=Collections.synchronizedList(new ArrayList<Library>());
 
 
 	
+	 public List<Library> getLibrary() {
+		return library;
+	}
+
+
+
+	public void setLibrary(List<Library> library) {
+		this.library = library;
+	}
+
+
+
 	public LibraryServiceImpl() {
+		super();
 System.out.println("LibraryDAO invoked...");
 		
 		library.add(new Library("Tahalia Library","21481","Tahalia St"));

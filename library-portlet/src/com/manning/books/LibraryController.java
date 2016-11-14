@@ -10,26 +10,30 @@ import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.portlet.ModelAndView;
 import org.springframework.web.portlet.mvc.AbstractController;
 
 
 
-
+@Controller
 public class LibraryController extends AbstractController {
 	
 	private Logger logger = Logger.getLogger(LibraryController.class);
 	
+	@Autowired
 	private LibraryService libraryService;
 	
-	public LibraryService getLibraryService() {
+/*	public LibraryService getLibraryService() {
 		return libraryService;
 	}
 
 	public void setLibraryService(LibraryService libraryService) {
 		this.libraryService = libraryService;
-	}
+	}*/
 
 	@Override
 	public void handleActionRequestInternal(ActionRequest request, ActionResponse response)

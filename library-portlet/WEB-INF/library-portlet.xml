@@ -11,7 +11,12 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util-3.0.xsd        
         ">
-	<bean id="libraryService" class="com.manning.books.LibraryServiceImpl" />
+        
+        <context:annotation-config/>
+        <context:component-scan base-package="com.manning.books"/>
+        
+	<!-- <bean id="libraryService" class="com.manning.books.LibraryServiceImpl" /> -->
+	
 	<util:properties id="exceptionmappings"
 		location="WEB-INF/exceptionmappings.properties" />
 
@@ -20,29 +25,29 @@
 	
 	
 	<bean id="showLibraryController" class="com.manning.books.LibraryController">
-		<property name="libraryService">
+		<!-- <property name="libraryService">
 			<ref bean="libraryService" />
-		</property>
+		</property> -->
 	</bean>
 	
 	<bean id="addLibraryController" class="com.manning.books.AddLibraryController">
-		<property name="libraryService">
+		<!-- <property name="libraryService">
 			<ref bean="libraryService" />
-		</property>
+		</property> -->
 	</bean>
 
 
 
 	 <bean id="editLibraryController" class="com.manning.books.EditLibraryController">
-		<property name="libraryService">
+		<!-- <property name="libraryService">
 			<ref bean="libraryService" />
-		</property>
+		</property> -->
 	</bean> 
 
 	<bean id="removeLibraryController" class="com.manning.books.RemoveLibraryController">
-		<property name="libraryService">
+		<!-- <property name="libraryService">
 			<ref bean="libraryService" />
-		</property>
+		</property> -->
 	</bean>
 
 <!-- 	<bean id="exceptionResolver"

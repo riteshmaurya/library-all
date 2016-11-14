@@ -8,20 +8,25 @@ import javax.portlet.ActionResponse;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.portlet.ModelAndView;
 import org.springframework.web.portlet.mvc.AbstractController;
 
+@Controller
 public class EditLibraryController extends AbstractController {
 
+	@Autowired
 	private LibraryService libraryService;
 	
-	public LibraryService getLibraryService() {
+	/*public LibraryService getLibraryService() {
 		return libraryService;
 	}
 
 	public void setLibraryService(LibraryService libraryService) {
 		this.libraryService = libraryService;
-	}
+	}*/
 
 	public void handleActionRequestInternal(ActionRequest request, ActionResponse response) throws Exception{
 	
