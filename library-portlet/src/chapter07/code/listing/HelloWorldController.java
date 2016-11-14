@@ -19,6 +19,8 @@ import org.springframework.web.portlet.mvc.Controller;
  * @author asarin
  *
  */
+
+
 @Component
 public class HelloWorldController implements Controller {
 	/**

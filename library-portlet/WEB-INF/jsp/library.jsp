@@ -5,7 +5,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <script>
 function confirmRemove(){
-	return confirm("Do you want to delete the selected library ?");
+	return confirm("Do you want to delete the selected library?");
 }
 </script>
 <portlet:renderURL var="showAddLibraryUrl">
