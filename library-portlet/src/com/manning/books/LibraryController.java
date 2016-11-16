@@ -19,7 +19,7 @@ import org.springframework.web.portlet.mvc.AbstractController;
 
 
 
-@Controller
+@Controller("showLibraryController")
 public class LibraryController extends AbstractController {
 	
 	private Logger logger = Logger.getLogger(LibraryController.class);
@@ -47,7 +47,6 @@ public class LibraryController extends AbstractController {
 	public ModelAndView handleRenderRequestInternal(RenderRequest request,
 			RenderResponse response) throws Exception {
 		logger.info("Entering handleRenderRequestInternal in ControllerLibrary method with myaction value :"+request.getParameter("myaction"));
-		
 		ModelAndView modelAndView=null;
 		Map<String, Object> modelMap = new ModelMap();
 		List<Library> library=libraryService.showAllLibrary();

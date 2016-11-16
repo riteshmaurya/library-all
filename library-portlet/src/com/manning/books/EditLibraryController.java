@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.portlet.ModelAndView;
 import org.springframework.web.portlet.mvc.AbstractController;
 
-@Controller
+@Controller("editLibraryController")
 public class EditLibraryController extends AbstractController {
 
 	@Autowired

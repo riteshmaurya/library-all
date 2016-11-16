@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 	<!-- define the project -->
-	<project name = "ch7_HelloWorldPortlet" default="build" basedir=".">
+	<project name = "library-portlet" default="build" basedir=".">
 		
 	<!-- define project properties -->
 	<property name="compiler" value="modern"/>
@@ -78,7 +78,7 @@
 	<!-- target to create the project WAR file -->
 	<target name="build" depends="clean,compile">
 		<mkdir dir="${build.dir}"/>
-		<war destfile="${build.dir}/ch7_HelloWorldPortlet.war" webxml="${web.xml}">
+		<war destfile="${build.dir}/library-portlet.war" webxml="${web.xml}">
 			<fileset refid="war.files"/>
 		</war>
 		<copy todir="C:/UTILS/liferay-portal-tomcat-6.0.6-20110225/liferay-portal-6.0.6/deploy">

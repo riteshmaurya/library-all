@@ -23,33 +23,25 @@
 	<!-- <bean id="editModeController" class="chapter07.code.listing.controller.EditModeController" />
 	<bean id="helpModeController" class="chapter07.code.listing.controller.HelpModeController" /> -->
 	
-	
+<!-- 	
 	<bean id="showLibraryController" class="com.manning.books.LibraryController">
-		<!-- <property name="libraryService">
-			<ref bean="libraryService" />
-		</property> -->
-	</bean>
+
+	</bean> -->
 	
-	<bean id="addLibraryController" class="com.manning.books.AddLibraryController">
-		<!-- <property name="libraryService">
-			<ref bean="libraryService" />
-		</property> -->
-	</bean>
+<!-- 	<bean id="addLibraryController" class="com.manning.books.AddLibraryController">
+
+	</bean> -->
 
 
-
+<!-- 
 	 <bean id="editLibraryController" class="com.manning.books.EditLibraryController">
-		<!-- <property name="libraryService">
-			<ref bean="libraryService" />
-		</property> -->
-	</bean> 
 
+	</bean>  -->
+<!-- 
 	<bean id="removeLibraryController" class="com.manning.books.RemoveLibraryController">
-		<!-- <property name="libraryService">
-			<ref bean="libraryService" />
-		</property> -->
-	</bean>
 
+	</bean>
+ -->
 <!-- 	<bean id="exceptionResolver"
 		class="org.springframework.web.portlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">

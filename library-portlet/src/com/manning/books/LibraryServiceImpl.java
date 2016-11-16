@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("libraryService")
 public class LibraryServiceImpl implements LibraryService {
 	
 	

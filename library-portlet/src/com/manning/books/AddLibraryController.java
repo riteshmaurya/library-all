@@ -14,18 +14,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.ModelAndView;
 import org.springframework.web.portlet.mvc.AbstractController;
 
 import com.manning.library.validators.LibraryValidator;
 
 
-@Controller
+@RequestMapping(value="VIEW")
+@Controller("addLibraryController")
 public class AddLibraryController extends AbstractController {
 
 	private Logger logger = Logger.getLogger(AddLibraryController.class);
 	
 	@Autowired
+	//@Qualifier("libraryService")
 	private LibraryService libraryService;
 	
 	

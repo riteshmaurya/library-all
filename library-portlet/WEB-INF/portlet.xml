@@ -3,7 +3,7 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
-	<portlet>
+<!-- 	<portlet>
 		<portlet-name>libraryLover</portlet-name>
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<supports>
@@ -14,10 +14,10 @@
 		<portlet-info>
 			<title>Library Lover</title>
 		</portlet-info>
-	</portlet>
+	</portlet> -->
 	<portlet>
 		<portlet-name>library</portlet-name>
-		<display-name>BAJ Library Search</display-name>
+		<display-name>BAJ Library</display-name>
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<supports>
 			<mime-type>text/html</mime-type>
