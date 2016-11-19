@@ -15,8 +15,8 @@
 	<portlet:param name="myaction" value="addLibrary" />
 </portlet:actionURL>
 
-
 <portlet:renderURL var="homeUrl">
+	<portlet:param name="myaction" value="library" />
 </portlet:renderURL>
 
 <form name="addLibraryForm" action="${addLibraryActionUrl}" method="POST">

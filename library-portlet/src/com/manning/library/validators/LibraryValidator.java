@@ -3,7 +3,7 @@ package com.manning.library.validators;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.manning.books.Library;
+import com.manning.library.model.Library;
 
 
 

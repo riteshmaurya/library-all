@@ -41,8 +41,6 @@
 	
 	<fileset id="war.files" dir=".">
 		<include name="${webinf.dir}/**"/>
-		<exclude name="${webinf.dir}/Language-ext.properties"/>
-		<exclude name="${webinf.dir}/Language2-ext.properties"/>
 		<exclude name="${webinf.dir}/CommonLang-ext.properties"/>
 		<include name="images/**"/>
 		<include name="css/**"/>
@@ -68,8 +66,6 @@
 		</copy>
 		<copy todir="${webinf.classes.content.dir}">
 			<fileset dir="${webinf.dir}">
-				<include name="Language-ext.properties"/>
-				<include name="Language2-ext.properties"/>
 				<include name="CommonLang-ext.properties"/>
 			</fileset>
 		</copy>

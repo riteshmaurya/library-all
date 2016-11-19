@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page contentType="text/html" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<script>
+<script TYPE="text/javascript">
 function confirmRemove(){
 	return confirm("Do you want to delete the selected library?");
 }
@@ -11,34 +11,34 @@ function confirmRemove(){
 <portlet:renderURL var="showAddLibraryUrl">
 	<portlet:param name="myaction" value="addLibraryForm" />
 </portlet:renderURL>
-
-
+<portlet:renderURL var="showUrl">
+</portlet:renderURL>
 <form:form name="catalogForm" method="post" action="${showAddLibraryUrl}">
 	<c:if test="${not empty library}">
 		<table border="1">
 			<tr bgcolor="#99CCFF">
-				<td valign="top"><b>Library Name</b></td>
-				<td valign="top"><b>zipcode</b></td>
-				<td valign="top"><b>Steet No</b></td>
+				<td valign="top"><b>NAME</b></td>
+				<td valign="top"><b>ZIPCODE</b></td>
+				<td valign="top"><b>STREET</b></td>
 				<td valign="top"><b>ACTION</b></td>
 			</tr>
-			<c:forEach var="library" items="${library}">
+			<c:forEach var="lib" items="${library}">
 				<tr>
-					<td valign="top"><c:out value="${library.libraryName}" /></td>
-					<td valign="top"><c:out value="${library.zipcode}" /></td>
-					<td valign="top"><c:out value="${library.street}" /></td>
+					<td valign="top"><c:out value="${lib.libraryName}" /></td>
+					<td valign="top"><c:out value="${lib.zipcode}" /></td>
+					<td valign="top"><c:out value="${lib.street}" /></td>
 					<td align="center" valign="top" width="100px"><a
 						href="
 						<portlet:renderURL>
 							<portlet:param name="myaction" value="editLibraryForm" />
-							<portlet:param name="libraryZipCodeEdit" value="${library.zipcode}" />
+							<portlet:param name="zipcode" value="${lib.zipcode}" />
 						</portlet:renderURL>					
 					"><b>Edit</b></a>
 					/
 					<a href="
 						<portlet:actionURL>
 							<portlet:param name="myaction" value="removeLibrary" />
-							<portlet:param name="libraryZipCodeRemove" value="${library.zipcode}" />
+							<portlet:param name="zipcode" value="${lib.zipcode}" />
 						</portlet:actionURL>					
 					" onclick="javascript: return confirmRemove()"><b>Remove</b></a></td>
 				</tr>

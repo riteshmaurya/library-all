@@ -13,12 +13,30 @@
         ">
         
         <context:annotation-config/>
-        <context:component-scan base-package="com.manning.books"/>
+        <context:component-scan base-package="com"/>
+        
+        <bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+	<bean id="myValidator"
+		class="com.manning.library.validators.LibraryValidator" />
+		
+	<bean
+		class="org.springframework.web.portlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="webBindingInitializer">
+			<bean
+				class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
+				<property name="validator" ref="validator" />
+			</bean>
+		</property>
+	</bean>
+	
+	
+        
         
 	<!-- <bean id="libraryService" class="com.manning.books.LibraryServiceImpl" /> -->
 	
-	<util:properties id="exceptionmappings"
-		location="WEB-INF/exceptionmappings.properties" />
+	<!-- <util:properties id="exceptionmappings"
+		location="WEB-INF/exceptionmappings.properties" /> -->
 
 	<!-- <bean id="editModeController" class="chapter07.code.listing.controller.EditModeController" />
 	<bean id="helpModeController" class="chapter07.code.listing.controller.HelpModeController" /> -->
@@ -57,7 +75,7 @@
 		</property>
 	</bean> -->
 
-	<bean id="portletModeParameterHandlerMapping"
+	<!--  <bean id="portletModeParameterHandlerMapping"
 		class="org.springframework.web.portlet.handler.PortletModeParameterHandlerMapping">
 		<property name="defaultHandler" ref="showLibraryController" />
 		<property name="parameterName" value="myaction" />
@@ -73,19 +91,9 @@
 						<entry key="removeLibrary" value-ref="removeLibraryController" />
 					</map>
 				</entry>
-				<!-- <entry key="edit">
-					<map>
-						<entry key="prefs" value-ref="editModeController" />
-					</map>
-				</entry> -->
-				<!-- <entry key="help">
-					<map>
-						<entry key="help" value-ref="helpModeController" />
-					</map>
-				</entry> -->
 			</map>
 		</property>
-	</bean>
+	</bean> -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"

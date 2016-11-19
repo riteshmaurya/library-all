@@ -4,36 +4,43 @@
 <%@ page contentType="text/html" isELIgnored="false"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<fmt:setLocale value="<%=request.getLocale()%>" />
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
-<%@ page contentType="text/html" isELIgnored="false" %>	
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
-<fmt:setBundle basename="content.CommonLang-ext"/>
-
-<%-- <c:set var="zipcode" value="${request.getParameter("libraryZipCodeEdit") }"/> --%>
-
-
-
 <portlet:actionURL var="editLibraryActionUrl">
 	<portlet:param name="myaction" value="editLibrary" />
-	<portlet:param name="libraryZipCodeEdit" value="${libraryZipCodeEdit}" />
 </portlet:actionURL>
-
-<!-- <<script type="text/javascript">
-console.log(zipcode);
-</script> -->
-
 <portlet:renderURL var="homeUrl">
+	<portlet:param name="myaction" value="library" />
 </portlet:renderURL>
-
-<form name="editLibraryForm" action="${editLibraryActionUrl}" method="POST">
-
-<div><span><fmt:message key="library.libraryName"/></span></div>
-<div><span><input type="text" name="libraryName" id="libraryName" value='<c:out value="${requestScope.library.libraryName }"></c:out>'></span></div>
-<div><span><fmt:message key="library.zipcode"/></span></div>
-<div><span><input type="text" name="zipcode" id="zipcode" value='<c:out value="${requestScope.library.zipcode }"></c:out>'></span></div>
-<div><span><fmt:message key="library.street"/></span></div>
-<div><span><input type="text" name="street" id="street" value='<c:out value="${requestScope.library.street }"></c:out>'></span></div>
-<div><span><input type="submit" value="Edit Library" ></span></div>
-</form>
+<form:form name="editLibraryForm" modelAttribute="libraryToEdit" method="post"
+	action="${editLibraryActionUrl}">
+	<table>
+		<tr align="left">
+			<a href="${homeUrl}">Home</a>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>NAME:<font style="color: #C11B17;">*</font></td>
+			<td><form:input path="libraryName" /></td>
+			<td><font style="color: #C11B17;"></font></td>
+		</tr>
+		<tr>
+			<td>STREET<font style="color: #C11B17;">*</font></td>
+			<td><form:input path="street" /></td>
+			<td><font style="color: #C11B17;"></font></td>
+		</tr>
+		<tr>
+			<td>ZIPCODE:<font style="color: #C11B17;">*</font></td>
+			<td><form:input path="zipcode" readonly="true"/></td>
+			<td><font style="color: #C11B17;"></font></td>
+		</tr>
+	</table>
+	<table align="right">
+		<tr>
+			<td><input type="submit" value="Update Library" /></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form:form>
+<br></br>
